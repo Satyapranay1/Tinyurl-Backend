@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS tinyurl (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(8) UNIQUE NOT NULL,
+    url TEXT NOT NULL,
+    total_clicks INTEGER NOT NULL DEFAULT 0,
+    last_clicked TIMESTAMP,
+    created_at TIMESTAMP DEFAULT NOW()
+);
